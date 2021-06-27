@@ -1,5 +1,3 @@
-import 'package:camera/camera.dart';
-
 class BarcodeScannerStatus {
   final bool isCameraAvailable;
   final String error;
@@ -15,8 +13,7 @@ class BarcodeScannerStatus {
   });
 
   // Construtor para quando a câmera estiver ativa
-  factory BarcodeScannerStatus.available() =>
-      BarcodeScannerStatus(
+  factory BarcodeScannerStatus.available() => BarcodeScannerStatus(
         isCameraAvailable: true,
         stopScanner: false,
       );

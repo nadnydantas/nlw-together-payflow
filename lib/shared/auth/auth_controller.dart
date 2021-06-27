@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:payflow/modules/home/home_page.dart';
-import 'package:payflow/modules/login/login_page.dart';
 import 'package:payflow/shared/models/user_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthController {
-  UserModel? _user; // tem ? porque user permite ser nulo
+  UserModel? _user; // tem ? porque permite user ser nulo
 
   UserModel get user =>
       _user!; //com o ! garanto que só vou chamar depois que tiver logado, ou seja, não tá null
@@ -17,7 +15,7 @@ class AuthController {
       // Navigator.push redireciona para a página; O Navigator.pushReplacement substitui a tela
       // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage())); // não tem rota nomeada
       Navigator.pushReplacementNamed(
-          context, "/home"); // navegação por rota nomeada
+          context, "/home", arguments: user); // navegação por rota nomeada
     } else {
       // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage())); // não tem rota nomeada
       Navigator.pushReplacementNamed(
