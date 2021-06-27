@@ -15,7 +15,7 @@ class BoletoTileWidget extends StatelessWidget {
         style: TextStyles.titleListTile,
       ),
       subtitle: Text(
-        "Vence em ${data.dueDate})",
+        "Vence em ${data.dueDate}",
         style: TextStyles.captionBody,
       ),
       trailing: Text.rich(TextSpan(
