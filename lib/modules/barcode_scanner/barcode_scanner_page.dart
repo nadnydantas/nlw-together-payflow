@@ -25,7 +25,7 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
     //  controller tem barcode e navegar para a tela de home
     controller.statusNotifier.addListener(() {
       if (controller.status.hasBarcode) {
-        Navigator.pushReplacementNamed(context, "/insert_boleto",
+        Navigator.pushNamed(context, "/insert_boleto",
             arguments: controller.status.barcode);
       }
     });
@@ -87,7 +87,7 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
                 bottomNavigationBar: SetLabelButtons(
                     primaryLabel: "Inserir código do boleto",
                     primaryOnPressed: () {
-                      Navigator.pushReplacementNamed(context, "/insert_boleto");
+                      Navigator.pushNamed(context, "/insert_boleto");
                     },
                     secondaryLabel: "Adicionar da galeria",
                     secondaryOnPressed: () {})),
@@ -106,7 +106,7 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
                   },
                   secondaryLabel: "Digitar código",
                   secondaryOnPressed: () {
-                    Navigator.pushReplacementNamed(context, "/insert_boleto");
+                    Navigator.pushNamed(context, "/insert_boleto");
                   },
                 );
               } else {
